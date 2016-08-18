@@ -1,2 +1,13 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
+<%= link_to 'Go Back', :back %>
+<% @album.artists(country: 'US').each do |artist| %>
+	<h3><%= artist.name %></h3>
+<% end %>
+<ul>
+	<% @album.tracks.each do |track| %>
+	<li>
+	   <%= track.name %>
+	   <%= link_to track.preview_url %>
+	</li>
+	<% end %>
+</ul>
+

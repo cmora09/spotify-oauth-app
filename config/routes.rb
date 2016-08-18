@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
+  resources :users
+
   get 'albums/index'
 
   get 'albums/show'
+  
+  get '/user/:id', to: "users#index"
 
   get '/albums', to: 'albums#index'
   get '/albums/:id', to:'albums#show', as: 'album'
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
   root 'welcome#index'
+  # get '/auth/spotify/callback/', to: 'albums#spotify'
+
+  get '/auth/:spotify/callback', :to => 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

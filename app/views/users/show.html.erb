@@ -1,0 +1,8 @@
+<%= link_to "Search for an album", root_path %>
+
+<%= form_tag '/user/:id', method: 'get', html: {class: 'form'} do %>
+  <div class= "form-group col-xs-6">
+    <%=text_field_tag(:user_name,"", placeholder: "Search for a username", class: "form-control") %>
+  </div>
+  <%= submit_tag "Search User", class: "btn btn-jumbo"%>
+<% end %>

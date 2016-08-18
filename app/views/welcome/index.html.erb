@@ -1,3 +1,6 @@
+<% if !@spotify_user %>
+	<%= link_to 'Sign in with Spotify', '/auth/spotify' %>
+<% end %>
 <h1> Spotify Oauth Demo </h1>
 <%= form_tag albums_path, method: 'get', html: {class: 'form'} do %>
 	<div class= "form-group col-xs-6">

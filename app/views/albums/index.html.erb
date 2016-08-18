@@ -1,2 +1,8 @@
-<h1>Albums#index</h1>
-<p>Find me in app/views/albums/index.html.erb</p>
+<h4><%= link_to "Search again", root_path %></h4>
+<h1> Here are the albums you've searched for</h1>
+<ul>
+ <% @albums.each do |album| %>
+	<strong><%= album.name %></strong> | <%= link_to "Show", album_path(album.id) %>
+	<%= image_tag(album.images[1]["url"]) %>
+ <% end %>
+</ul>
