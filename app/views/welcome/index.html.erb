@@ -1,0 +1,7 @@
+<h1> Spotify Oauth Demo </h1>
+<%= form_tag albums_path, method: 'get', html: {class: 'form'} do %>
+	<div class= "form-group col-xs-6">
+		<%=text_field_tag(:album_name,"", placeholder: "Search for an Album", class: "form-control") %>
+	</div>
+	<%= submit_tag "Search Album", class: "btn btn-jumbo"%>
+<% end %>
