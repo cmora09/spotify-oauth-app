@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   def index
+    # @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
   	@albums = RSpotify::Album.search(params[:album_name])
   end
 

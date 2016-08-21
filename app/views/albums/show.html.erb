@@ -6,7 +6,7 @@
 	<% @album.tracks.each do |track| %>
 	<li>
 	   <%= track.name %>
-	   <%= link_to track.preview_url %>
+	   <%= link_to "Preview Track", track.preview_url %>
 	</li>
 	<% end %>
 </ul>
